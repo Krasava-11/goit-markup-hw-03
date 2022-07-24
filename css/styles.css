@@ -13,6 +13,45 @@ body {
 	letter-spacing: 0.03em;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+	margin: 0;
+}
+ul,
+ol {
+	margin: 0;
+	padding-left: 0;
+}
+
+header {
+	border-bottom: 1px solid #ececec;
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+.container {
+	width: 100%;
+	max-width: 1200px;
+	margin-left: auto;
+	margin-right: auto;
+	padding-left: 15px;
+	padding-right: 15px;
+}
+
+.section {
+	padding-top: 94px;
+	padding-bottom: 94px;
+}
+
 /* -----Header----- */
 
 .logo {
@@ -23,6 +62,9 @@ body {
 	font-size: 26px;
 	line-height: 1.19;
 	text-decoration: none;
+	margin-right: 93px;
+	margin-top: 24px;
+	margin-bottom: 25px;
 }
 
 .logo-color {
@@ -37,9 +79,27 @@ body {
 .contacts,
 .advantage-list,
 .work-list,
-.address-list {
+.work-list-team,
+.address-list,
+.list-button,
+.list-works {
 	list-style-type: none;
 }
+
+.header > .container {
+	display: flex;
+}
+
+.header-list {
+	display: flex;
+	margin-top: 32px;
+	margin-bottom: 32px;
+}
+
+.header-item:not(:last-child) {
+	margin-right: 50px;
+}
+
 .nav-list {
 	color: var(--title-text-color);
 
@@ -60,6 +120,13 @@ body {
 	color: var(--accent-color);
 }
 
+.contacts {
+	display: flex;
+	margin-left: auto;
+	margin-top: 32px;
+	margin-bottom: 32px;
+}
+
 .contacts-mail {
 	color: var(--primary-text-color);
 
@@ -68,6 +135,7 @@ body {
 	line-height: 1.14;
 	letter-spacing: 0.02em;
 	text-decoration: none;
+	margin-right: 50px;
 }
 
 .contacts-mail:hover,
@@ -96,6 +164,8 @@ body {
 
 .section-hero {
 	background-color: #2f303a;
+	padding-top: 200px;
+	padding-bottom: 200px;
 }
 
 .title {
@@ -119,11 +189,12 @@ body {
 	font-weight: 700;
 	font-size: 16px;
 	line-height: 1.9;
-	display: flex;
-	align-items: center;
+	cursor: pointer;
 	text-align: center;
 	letter-spacing: 0.06em;
-	cursor: pointer;
+	display: block;
+	margin: auto;
+	margin-top: 30px;
 }
 
 .btn:hover,
@@ -131,7 +202,28 @@ body {
 	background-color: #188ce8;
 }
 
-/* -----Секція переваг-----*/
+/* -----Секція переваг та чим ми займаємся-----*/
+
+.visually-hidden {
+	position: absolute;
+	white-space: nowrap;
+	width: 1px;
+	height: 1px;
+	overflow: hidden;
+	border: 0;
+	padding: 0;
+	clip: rect(0 0 0 0);
+	clip-path: inset(50%);
+	margin: -1px;
+}
+
+.advantage-list {
+	display: flex;
+}
+
+.advantage-item:not(:last-child) {
+	margin-right: 30px;
+}
 
 .advantage-title {
 	color: var(--title-text-color);
@@ -139,19 +231,12 @@ body {
 	font-size: 14px;
 	line-height: 1.14;
 	text-transform: uppercase;
+	margin-bottom: 10px;
 }
 
 .advantage-text {
 	font-size: 14px;
 	line-height: 1.7;
-}
-
-/* -----Секція переваг-----*/
-
-/* -----Чим ми займаємся та наша команда----- */
-
-.section-team {
-	background-color: #f5f4fa;
 }
 
 .work-title {
@@ -160,6 +245,49 @@ body {
 	font-size: 36px;
 	line-height: 1.17;
 	text-align: center;
+	margin-top: 94px;
+	margin-bottom: 50px;
+}
+
+.work-list {
+	display: flex;
+	gap: 30px;
+}
+
+.work-item {
+	width: calc((100% - 60px) / 3);
+}
+
+/* -----Секція переваг та чим ми займаємся-----*/
+
+/* -----Наша команда----- */
+
+.section-team {
+	background-color: #f5f4fa;
+}
+
+.work-title-team {
+	color: var(--title-text-color);
+
+	font-size: 36px;
+	line-height: 1.17;
+	text-align: center;
+	margin-bottom: 50px;
+}
+
+.work-list-team {
+	display: flex;
+	gap: 30px;
+}
+
+.work-item-team {
+	width: calc((100% - 90px) / 4);
+}
+
+.work-item-team {
+	background: #ffffff;
+	box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
+	border-radius: 0px 0px 4px 4px;
 }
 
 .name-title {
@@ -169,15 +297,18 @@ body {
 	font-size: 16px;
 	line-height: 1.19;
 	text-align: center;
+	margin-top: 30px;
+	margin-bottom: 10px;
 }
 
 .team-text {
 	font-size: 16px;
 	line-height: 1.19;
 	text-align: center;
+	margin-bottom: 30px;
 }
 
-/* -----Чим ми займаємся та наша команда----- */
+/* -----Наша команда----- */
 
 /* -----Main-----*/
 
@@ -185,7 +316,20 @@ body {
 
 .footer {
 	background-color: #2f303a;
+	padding-top: 60px;
+	padding-bottom: 60px;
 }
+
+.logo-footer {
+	font-family: "Raleway", sans-serif;
+
+	font-weight: 700;
+	color: #000000;
+	font-size: 26px;
+	line-height: 1.19;
+	text-decoration: none;
+}
+
 .address {
 	color: #ffffff;
 
@@ -194,6 +338,14 @@ body {
 	line-height: 1.7;
 	text-decoration: none;
 	font-style: normal;
+}
+
+.address-list {
+	margin-top: 20px;
+}
+
+.address-item:not(:last-child) {
+	margin-bottom: 9px;
 }
 
 .address:hover {
@@ -225,6 +377,15 @@ body {
 
 /* -----Портфоліо===== */
 
+.list-button {
+	display: flex;
+	justify-content: center;
+}
+
+.button-item:not(:last-child) {
+	margin-right: 8px;
+}
+
 .button {
 	background: #f5f4fa;
 	border-radius: 4px;
@@ -245,15 +406,29 @@ body {
 	color: #ffffff;
 }
 
+.button-item {
+	margin-bottom: 50px;
+}
+
+/* ----- Роботи -----*/
+
+.list-works {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 30px;
+}
+
 .works-link {
 	text-decoration: none;
 }
 .works-title {
 	color: var(--title-text-color);
 
+	font-style: normal;
 	font-size: 18px;
 	line-height: 2;
 	letter-spacing: 0.06em;
+	margin: 20px 24px 4px;
 }
 
 .works-text {
@@ -261,4 +436,14 @@ body {
 
 	font-size: 16px;
 	line-height: 1.9;
+
+	margin: 0px 24px 20px;
 }
+
+.item-works {
+	background: #ffffff;
+	border: 1px solid #eeeeee;
+
+	width: calc((100% - 60px) / 3);
+}
+/* ----- Роботи -----*/
